@@ -12,8 +12,8 @@ export const CONTAINED: 2;
 
 declare module 'three/src/core/BufferGeometry' {
 	interface BufferGeometry {
-		computeBoundsTree(): any;
-		disposeBoundsTree(): any;
+		computeBoundsTree: typeof computeBoundsTree;
+		disposeBoundsTree: typeof disposeBoundsTree;
 	}
 }
 
