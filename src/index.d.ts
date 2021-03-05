@@ -11,6 +11,6 @@ declare module 'three/src/core/BufferGeometry' {
 
 declare module 'three/src/core/Raycaster' {
 	interface Raycaster {
-		firstHitOnly: undefined | boolean;
+		firstHitOnly?: boolean;
 	}
 }
