@@ -9,6 +9,7 @@
     "generate-cast-functions": "node ./scripts/generate-cast-functions.js",
     "build": "npm run generate-cast-functions && rollup -c & parcel build ./example/*.html --out-dir ./example/bundle/ --public-url . --no-cache --no-source-maps --no-content-hash",
     "test": "npm run generate-cast-functions && jest",
+    "typecheck": "tsc --noEmit --strict test/Example.typecheck.ts",
     "lint": "npm run generate-cast-functions && eslint \"./src/*.js\" \"./test/*.js\" \"./example/*.js\"",
     "benchmark": "npm run generate-cast-functions && node benchmark/index.js"
   },
@@ -51,6 +52,7 @@
     "@babel/core": "^7.12.9",
     "@babel/preset-env": "^7.12.7",
     "@babel/register": "^7.12.1",
+    "@types/three": "^0.126.0",
     "babel-jest": "^26.6.3",
     "concurrently": "^5.3.0",
     "dat.gui": "^0.7.3",
@@ -65,7 +67,8 @@
     "simplex-noise": "^2.4.0",
     "static-server": "^2.2.1",
     "stats.js": "^0.17.0",
-    "three": "^0.126.1"
+    "three": "^0.126.1",
+    "typescript": "^4.2.3"
   },
   "dependencies": {}
 }
