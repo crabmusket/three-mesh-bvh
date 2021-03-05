@@ -1,6 +1,13 @@
+export class MeshBVH {}
+export class Visualizer {}
+export class MeshBVHVisualizer {}
+export class MeshBVHDebug {}
+
 export function computeBoundsTree(): any
 export function disposeBoundsTree(): any
 export function acceleratedRaycast(): any
+export function estimateMemoryInBytes(): any
+export function getBVHExtremes(): any
 
 export const CENTER: 0;
 export const AVERAGE: 1;
