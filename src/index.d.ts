@@ -1,3 +1,5 @@
+import type { Mesh, Intersection, Raycaster } from 'three';
+
 export type Options = {
     strategy: Strategies;
     maxDepth: number;
@@ -17,7 +19,7 @@ export class MeshBVHDebug {}
 
 export function computeBoundsTree( this: HasBoundsTree, options?: Partial<Options> ): MeshBVH
 export function disposeBoundsTree( this: HasBoundsTree ): void
-export function acceleratedRaycast(): unknown
+export function acceleratedRaycast( this: Mesh, raycaster: Raycaster, intersects: Intersection[] ): void
 export function estimateMemoryInBytes(): unknown
 export function getBVHExtremes(): unknown
 
