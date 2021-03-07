@@ -1,9 +1,21 @@
+export type Options = {
+    strategy: Strategies;
+    maxDepth: number;
+    maxLeafTris: number;
+    verbose: boolean;
+    lazyGeneration: boolean;
+}
+
+type Strategies = typeof CENTER | typeof AVERAGE | typeof SAH;
+
+type HasBoundsTree = {boundsTree?: MeshBVH}
+
 export class MeshBVH {}
 export class Visualizer {}
 export class MeshBVHVisualizer {}
 export class MeshBVHDebug {}
 
-export function computeBoundsTree(): unknown
+export function computeBoundsTree( this: HasBoundsTree, options?: Partial<Options> ): MeshBVH
 export function disposeBoundsTree(): unknown
 export function acceleratedRaycast(): unknown
 export function estimateMemoryInBytes(): unknown
@@ -19,6 +31,7 @@ export const CONTAINED: 2;
 
 declare module 'three/src/core/BufferGeometry' {
 	interface BufferGeometry {
+		boundsTree?: MeshBVH;
 		computeBoundsTree: typeof computeBoundsTree;
 		disposeBoundsTree: typeof disposeBoundsTree;
 	}
